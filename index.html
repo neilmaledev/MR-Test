@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="ngApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Neil Male - MR Frontend Developer Technical Test</title>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style/style.css" />
+    </head>
+
+    <body ng-controller="AppController">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-3 text-right" id="header">
+                    <button type="button" id="my-cart-btn" ng-mouseover="myCart(true)" ng-mouseout="myCart(false)" class="d-none d-sm-inline-block" ng-class="{'my-cart-btn-open' : isCartOpen}">
+                        My Cart <span ng-bind="'( ' + cartCount + ' )'"></span>
+                    </button>
+                    <button type="button" id="my-cart-btn" ng-click="myCart(!isCartOpen)" class="d-inline-block d-sm-none" ng-class="{'my-cart-btn-open' : isCartOpen}">
+                        <img src="images/cart-icon.png"> 
+                        <span ng-bind="'(' + cartCount + ')'"></span>
+                    </button>
+
+                    <div id="mini-cart" ng-if="isCartOpen">
+                        <div ng-if="!cartCount" class="text-center">No item</div>
+                        <div class="row" ng-class="{'mb-3': !$last}" ng-repeat="(key, value) in cart track by $index">
+                            <div class="col-4">
+                                <img src="images/classic-tee.jpg" class="tee-thumbnail" alt="Classic Tee thumbnail" >
+                            </div>
+                            <div class="col-8 text-left pl-2">
+                                <div class="mb-1">Classic Tee</div>
+                                <div class="mb-2">
+                                    <span ng-bind="value"></span>x 
+                                    <b>$75.00</b>
+                                </div>
+                                <div>Size: <span ng-bind="key"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-6 text-right pb-4">
+                    <img src="images/classic-tee.jpg" class="img-fluid tee" alt="Classic Tee" >
+                </div>
+                <div class="col-sm-6 col-md-4 pb-4">
+                    <div class="h4 mb-3 c-darker">Classic Tee</div>
+                    <div class="h6 font-weight-bold mb-3">$75.00</div>
+                    <p class="c-lighter">
+                        Dolor sit amet, consectetur adipiscing elit. Haec et tu ita posuisti, et verba vestra
+                        sunt. Quod autem ratione actum est, id officium appellamus dolor sit amet,
+                        consectetur adipiscing elit. Haec et tu ita posuisti, et verba sunt. Quod 
+                        autem ratione actum est, id officium appellamus
+                    </p>
+
+                    <div class="mb-3 font-weight-bold">
+                        <span class="c-lighter ">SIZE</span><span class="c-required">*</span>
+                        <span ng-bind="selectedSize"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="button" class="sizes-btn" ng-class="{'size-selected' : selectedSize == 'S'}" ng-click="setSize('S')">S</button>
+                        <button type="button" class="sizes-btn" ng-class="{'size-selected' : selectedSize == 'M'}"ng-click="setSize('M')">M</button>
+                        <button type="button" class="sizes-btn" ng-class="{'size-selected' : selectedSize == 'L'}" ng-click="setSize('L')">L</button>
+                    </div>
+
+                    <div>
+                        <button type="button" id="add-to-cart" ng-click="addToCart()">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/angularjs/angular.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

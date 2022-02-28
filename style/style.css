@@ -1,0 +1,92 @@
+#header {
+    position: relative;
+    background-color: #F6F6F7;
+    height:30px;
+}
+
+.c-darker {
+    color: #222222
+}
+
+.c-lighter {
+    color: #888888
+}
+
+.c-required {
+    color: #C90000;
+}
+
+.tee {
+    height: 70vmin;
+}
+
+.tee-thumbnail {
+    width: 80px;
+    height: auto;
+}
+
+.sizes-btn {
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #888888;
+    cursor: pointer;
+    outline: none !important;
+}
+
+.size-selected {
+    border: 2px solid #222222;
+}
+
+#add-to-cart {
+    border: 2px solid #222222;
+    background-color: #ffffff;
+    color: #222222;
+    font-weight: 600;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none !important;
+}
+
+#add-to-cart:hover {
+    transition: all 0.2s;
+    border: 2px solid #ffffff;
+    background-color: #222222;
+    color: #ffffff;
+}
+
+#my-cart-btn {
+    position: relative;
+    color: #888888;
+    border: none;
+    background-color: #F6F6F7;
+    outline: none;
+    cursor: pointer;
+}
+
+.my-cart-btn-open {
+    border: 1px solid #CCCCCC !important;
+    border-bottom: none !important;
+    background-color: #ffffff !important;
+}
+
+#mini-cart {
+    position: absolute;
+    background: #ffffff;
+    padding: 20px;
+    right: 15px;
+    z-index: 1;
+    min-width: 300px;
+    border: 1px solid #CCCCCC;
+}
+
+@media (max-width: 576px) {
+    .tee {
+        width: 100%;
+        height: auto;
+    }
+}
